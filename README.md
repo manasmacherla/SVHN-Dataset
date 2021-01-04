@@ -42,7 +42,7 @@ transforms.RandomResizedCrop(64)
 
 * Adding batch norm layers significantly improved the performance. Accuracy increase to 84%, but the network was still underfitting. 
 
-* Used a finetuned ResNet 18 architecture to train the model with a learning rate of 0.0001 and an learning rate scheduler in case the loss does not reduce. 
+* I finally used a finetuned ResNet 18 architecture to train the model with a learning rate of 0.0001 and an learning rate scheduler in case the loss does not reduce. 
 ```
 torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor = 0.1, patience = 3, verbose=True)
 ```
@@ -51,7 +51,7 @@ torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor = 0.1, patience = 3
 
 And voila, 25 epochs and a couple of episodes of FRIENDS later, the accuracy of the test set settled at 97%. 
 
-## Stretegies that I missed
+## Strategies that I missed
 * One strategy that would help a lot but I could not implement due to some time constraints is called as cutout. It is based on this paper: https://arxiv.org/abs/1708.04896
 It randomly selects a rectangular area from the image and erases it's pixels. This helps the network learn not only the obvious features but also other features that it might miss. 
 
